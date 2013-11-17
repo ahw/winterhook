@@ -1,0 +1,7 @@
+http://waxy.org/links/index.xml
+http://capitolbeat.us/feed/
+http://feeds.feedburner.com/hacker-news-feed-50?format=xml
+http://feeds.adweek.com/adweek/all-news
+http://feeds.huffingtonpost.com/huffingtonpost/LatestNews
+http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+http://www.peggynoonan.com/feed/
