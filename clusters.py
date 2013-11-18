@@ -35,7 +35,7 @@ def pearson(v1, v2):
 
     return 1.0 - (num / den)
 
-def hcluster(rows, distance = pearson):
+def hcluster(rows, distfunc = pearson):
     distances = {}
     currentclusterid = -1
     # Clusters are initially just the rows
@@ -82,7 +82,7 @@ def hcluster(rows, distance = pearson):
         newcluster = bicluster(mergevec,
                 left = clusters[lowestpair[0]],
                 right = clusters[lowestpair[1]],
-                distfunc = closest,
+                distance = closest,
                 id = currentclusterid)
 
         # Decrement the cluster id so we get a new unique cluster id to use
@@ -103,15 +103,15 @@ def hcluster(rows, distance = pearson):
 
 def printclust(clust, labels = None, n = 0):
     # Indent to make a hierarchy layout
-    for i in range(n): print ' '
+    for i in range(n): print ' ', # Prevents printing a newline after each space
 
     if clust.id < 0:
         # By our convention, negative cluster ids indicate that this is a
         # branch node
-        print '-'
+        print '[%s]---' % n
     else:
         # By our convention, positive ids mean that this is one of the
-        # original nodes (an endpoint in the dengraph)
+        # original nodes (an endpoint in the dendrogram)
         if labels == None: print clust.id
         else: print labels[clust.id]
 
